@@ -8,4 +8,7 @@ services:
       - "8080:80"
     volumes:
       - ./html:/usr/share/nginx/html:ro
+      - ./logs:/var/log/nginx
     restart: unless-stopped
+    environment:
+      - NGINX_HOST=portfolio.local
